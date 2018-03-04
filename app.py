@@ -1,10 +1,11 @@
 import re
 from io import BytesIO
-from flask import Flask, send_file, request
+from flask import Flask, send_file, request, jsonify
 from PIL import Image
 import requests
 import numpy as np
 import tensorflow as tf
+from json import dumps
 from object_detection.utils import label_map_util
 from object_detection.utils import visualization_utils as vis_util
 import os
@@ -54,18 +55,9 @@ def detect_objects(sess, image):
     boxes = np.squeeze(boxes)
     classes = np.squeeze(classes).astype(np.int32)
     scores = np.squeeze(scores)
+    return [boxes, scores, classes, num_detections]
 
-    vis_util.visualize_boxes_and_labels_on_image_array(
-          image_np,
-          boxes,
-          classes,
-          scores,
-          category_index,
-          use_normalized_coordinates=True,
-          line_thickness=8)
-    return array2image(image_np)
-
-@app.route('/detect_objects')
+@app.route('/')
 def detect():
     default_url = 'http://thecatapi.com/api/images/get?format=src&type=jpg'
     url = request.args.get('url', default_url)
@@ -73,13 +65,8 @@ def detect():
     image = Image.open(BytesIO(r.content))
     with detection_graph.as_default():
         with tf.Session(graph=detection_graph) as sess:
-            image = detect_objects(sess, image)
-
-    byte_io = BytesIO()
-    image.save(byte_io, 'JPEG')
-    byte_io.seek(0)
-
-    return send_file(byte_io, mimetype='image/jpeg')
+            # return dumps(sess, image)
+            return "Hi"
 
 if __name__ == '__main__':
     app.run(debug=True)
