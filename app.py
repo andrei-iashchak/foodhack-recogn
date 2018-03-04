@@ -5,7 +5,7 @@ from PIL import Image
 import requests
 import numpy as np
 import tensorflow as tf
-from json import dumps
+# from json import dumps
 from object_detection.utils import label_map_util
 from object_detection.utils import visualization_utils as vis_util
 import os
