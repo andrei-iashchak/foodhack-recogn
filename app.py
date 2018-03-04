@@ -12,13 +12,13 @@ import os
 
 PATH_TO_CKPT = '/app/my_frozen_inference_graph.pb'
 
-detection_graph = tf.Graph()
-with detection_graph.as_default():
-    od_graph_def = tf.GraphDef()
-    with tf.gfile.GFile(PATH_TO_CKPT, 'rb') as fid:
-        serialized_graph = fid.read()
-        od_graph_def.ParseFromString(serialized_graph)
-        tf.import_graph_def(od_graph_def, name='')
+# detection_graph = tf.Graph()
+# with detection_graph.as_default():
+#     od_graph_def = tf.GraphDef()
+#     with tf.gfile.GFile(PATH_TO_CKPT, 'rb') as fid:
+#         serialized_graph = fid.read()
+#         od_graph_def.ParseFromString(serialized_graph)
+#         tf.import_graph_def(od_graph_def, name='')
 
 # PATH_TO_LABELS = '/app/my_label_map.pbtxt'
 # NUM_CLASSES = 90
