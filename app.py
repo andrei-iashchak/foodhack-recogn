@@ -1,14 +1,14 @@
 import re
 from io import BytesIO
 from flask import Flask, send_file, request, jsonify
-from PIL import Image
-import requests
-import numpy as np
+# from PIL import Image
+# import requests
+# import numpy as np
 import tensorflow as tf
 # from json import dumps
-from object_detection.utils import label_map_util
-from object_detection.utils import visualization_utils as vis_util
-import os
+# from object_detection.utils import label_map_util
+# from object_detection.utils import visualization_utils as vis_util
+# import os
 
 PATH_TO_CKPT = '/app/my_frozen_inference_graph.pb'
 
