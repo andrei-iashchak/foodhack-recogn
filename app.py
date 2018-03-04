@@ -1,5 +1,5 @@
 # from io import BytesIO
-from flask import Flask, send_file, request, jsonify
+from flask import Flask, send_file, request
 # from PIL import Image
 # import requests
 # import numpy as np
@@ -68,4 +68,4 @@ def detect():
     return "Hi"
 
 if __name__ == '__main__':
-    app.run(debug=True, use_reloader=False)
+    app.run(use_reloader=False)
