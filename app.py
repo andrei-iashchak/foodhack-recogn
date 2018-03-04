@@ -1,25 +1,25 @@
 import re
-# from io import BytesIO
+from io import BytesIO
 from flask import Flask, send_file, request, jsonify
-# from PIL import Image
-# import requests
-# import numpy as np
-# import tensorflow as tf
-# from json import dumps
-# from object_detection.utils import label_map_util
-# from object_detection.utils import visualization_utils as vis_util
-# import os
-#
-# PATH_TO_CKPT = '/app/my_frozen_inference_graph.pb'
-#
-# detection_graph = tf.Graph()
-# with detection_graph.as_default():
-#     od_graph_def = tf.GraphDef()
-#     with tf.gfile.GFile(PATH_TO_CKPT, 'rb') as fid:
-#         serialized_graph = fid.read()
-#         od_graph_def.ParseFromString(serialized_graph)
-#         tf.import_graph_def(od_graph_def, name='')
-#
+from PIL import Image
+import requests
+import numpy as np
+import tensorflow as tf
+from json import dumps
+from object_detection.utils import label_map_util
+from object_detection.utils import visualization_utils as vis_util
+import os
+
+PATH_TO_CKPT = '/app/my_frozen_inference_graph.pb'
+
+detection_graph = tf.Graph()
+with detection_graph.as_default():
+    od_graph_def = tf.GraphDef()
+    with tf.gfile.GFile(PATH_TO_CKPT, 'rb') as fid:
+        serialized_graph = fid.read()
+        od_graph_def.ParseFromString(serialized_graph)
+        tf.import_graph_def(od_graph_def, name='')
+
 # PATH_TO_LABELS = '/app/my_label_map.pbtxt'
 # NUM_CLASSES = 90
 #
@@ -29,14 +29,14 @@ from flask import Flask, send_file, request, jsonify
 # print('Loaded')
 #
 app = Flask(__name__)
-#
-# def image2array(image):
-#     (w, h) = image.size
-#     return np.array(image.getdata()).reshape((h, w, 3)).astype(np.uint8)
-#
-# def array2image(arr):
-#     return Image.fromarray(np.uint8(arr))
-#
+
+def image2array(image):
+    (w, h) = image.size
+    return np.array(image.getdata()).reshape((h, w, 3)).astype(np.uint8)
+
+def array2image(arr):
+    return Image.fromarray(np.uint8(arr))
+
 # def detect_objects(sess, image):
 #     '''Plots the object detection result for a given image.'''
 #     image_np = image2array(image)
