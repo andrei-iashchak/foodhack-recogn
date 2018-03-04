@@ -1,0 +1,94 @@
+item {
+  id: 1
+  name: 'tomato'
+}
+
+item {
+  id: 2
+  name: 'egg'
+}
+
+item {
+  id: 3
+  name: 'egg_box'
+}
+
+item {
+  id: 4
+  name: 'sweet_pepper'
+}
+
+item {
+  id: 5
+  name: 'milk'
+}
+
+item {
+  id: 6
+  name: 'cheese'
+}
+
+item {
+  id: 7
+  name: 'butter'
+}
+
+item {
+  id: 8
+  name: 'strawberry'
+}
+
+item {
+  id: 9
+  name: 'wine'
+}
+
+item {
+  id: 10
+  name: 'beer'
+}
+
+item {
+  id: 11
+  name: 'grape'
+}
+
+item {
+  id: 12
+  name: 'carrot'
+}
+
+item {
+  id: 13
+  name: 'condensed_milk'
+}
+
+item {
+  id: 14
+  name: 'banan'
+}
+
+item {
+  id: 15
+  name: 'pepper'
+}
+
+item {
+  id: 16
+  name: 'lemon'
+}
+
+item {
+  id: 17
+  name: 'sauce'
+}
+
+item {
+  id: 18
+  name: 'soy_sauce'
+}
+
+item {
+  id: 19
+  name: 'sour_cream'
+}
