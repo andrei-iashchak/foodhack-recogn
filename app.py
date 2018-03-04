@@ -10,7 +10,7 @@ from object_detection.utils import label_map_util
 from object_detection.utils import visualization_utils as vis_util
 import os
 
-PATH_TO_CKPT = '/app/frozen_inference_graph.pb'
+PATH_TO_CKPT = '/app/my_frozen_inference_graph.pb'
 
 detection_graph = tf.Graph()
 with detection_graph.as_default():
@@ -20,7 +20,7 @@ with detection_graph.as_default():
         od_graph_def.ParseFromString(serialized_graph)
         tf.import_graph_def(od_graph_def, name='')
 
-PATH_TO_LABELS = '/app/label_map.pbtxt'
+PATH_TO_LABELS = '/app/my_label_map.pbtxt'
 NUM_CLASSES = 90
 
 label_map = label_map_util.load_labelmap(PATH_TO_LABELS)
