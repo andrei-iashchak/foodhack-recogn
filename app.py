@@ -59,14 +59,14 @@ def detect_objects(sess, image):
 
 @app.route('/')
 def detect():
-    default_url = 'http://thecatapi.com/api/images/get?format=src&type=jpg'
-    url = request.args.get('url', default_url)
-    r = requests.get(url)
-    image = Image.open(BytesIO(r.content))
-    with detection_graph.as_default():
-        with tf.Session(graph=detection_graph) as sess:
-            detect_objects(sess, image)
-            return "Hi"
+    # default_url = 'http://thecatapi.com/api/images/get?format=src&type=jpg'
+    # url = request.args.get('url', default_url)
+    # r = requests.get(url)
+    # image = Image.open(BytesIO(r.content))
+    # with detection_graph.as_default():
+    #     with tf.Session(graph=detection_graph) as sess:
+    #         detect_objects(sess, image)
+    return "Hi"
 
 if __name__ == '__main__':
     app.run(debug=True)
