@@ -3,7 +3,7 @@ from flask import Flask, send_file, request
 # from PIL import Image
 # import requests
 # import numpy as np
-import tensorflow as tf
+# import tensorflow as tf
 # from json import dumps
 # from object_detection.utils import label_map_util
 # from object_detection.utils import visualization_utils as vis_util
@@ -29,12 +29,12 @@ PATH_TO_CKPT = '/app/my_frozen_inference_graph.pb'
 #
 app = Flask(__name__)
 
-def image2array(image):
-    (w, h) = image.size
-    return np.array(image.getdata()).reshape((h, w, 3)).astype(np.uint8)
-
-def array2image(arr):
-    return Image.fromarray(np.uint8(arr))
+# def image2array(image):
+#     (w, h) = image.size
+#     return np.array(image.getdata()).reshape((h, w, 3)).astype(np.uint8)
+#
+# def array2image(arr):
+#     return Image.fromarray(np.uint8(arr))
 
 # def detect_objects(sess, image):
 #     '''Plots the object detection result for a given image.'''
