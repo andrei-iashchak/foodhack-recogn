@@ -71,3 +71,5 @@ RUN pip install flask
 ADD docker/service/ /etc/service/
 COPY frozen_inference_graph.pb /app
 COPY label_map.pbtxt /app
+EXPOSE 5000
+EXPOSE 8888
