@@ -65,7 +65,7 @@ def detect():
     image = Image.open(BytesIO(r.content))
     with detection_graph.as_default():
         with tf.Session(graph=detection_graph) as sess:
-            # return dumps(sess, image)
+            detect_objects(sess, image)
             return "Hi"
 
 if __name__ == '__main__':
