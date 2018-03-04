@@ -68,8 +68,8 @@ RUN wget http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v1
     rm ssd_mobilenet_v1_coco_11_06_2017.tar.gz
 WORKDIR /app
 RUN pip install flask
-ADD docker/service/ /etc/service/
 COPY my_frozen_inference_graph.pb /app
 COPY my_label_map.pbtxt /app
 EXPOSE 5000
 EXPOSE 8888
+CMD ["python", "app.py"]

@@ -1,5 +1,0 @@
-#!/bin/bash
-
-pushd /app
-FLASK_APP=app.py FLASK_DEBUG=True exec flask run --host=0.0.0.0 --port=443
-popd
